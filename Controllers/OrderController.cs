@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using MyShop.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
+using MyShop.ViewModels;
 
 namespace MyShop.Controllers;
 
@@ -20,9 +23,27 @@ public class OrderController : Controller
     }
 
     [HttpGet]
-    public IActionResult CreateOrderItem()
+    public async Task<IActionResult> CreateOrderItem()
     {
-        return View();
+        var items = await _itemDbContext.Items.ToListAsync();
+        var orders = await _itemDbContext.Orders.ToListAsync();
+        var createOrderItemViewModel = new CreateOrderItemViewModel
+        {
+            OrderItem = new OrderItem(),
+
+            ItemSelectList = items.Select(item => new SelectListItem
+            {
+                Value = item.ItemId.ToString(),
+                Text = item.ItemId.ToString() + ": " + item.Name
+            }).ToList(),
+
+            OrderSelectList = orders.Select(order => new SelectListItem
+            {
+                Value = order.OrderId.ToString(),
+                Text = "Order " + order.OrderId.ToString() + ", Date: " + order.OrderDate + ", Customer: " + order.Customer.Name
+            }).ToList(),
+        };
+        return View(createOrderItemViewModel);
     }
 
     [HttpPost]
