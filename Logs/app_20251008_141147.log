@@ -1,0 +1,143 @@
+2025-10-08 14:11:48.247 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2025-10-08 14:11:48.298 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Customers" (
+    "CustomerId" INTEGER NOT NULL CONSTRAINT "PK_Customers" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Address" TEXT NOT NULL
+);
+2025-10-08 14:11:48.299 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Items" (
+    "ItemId" INTEGER NOT NULL CONSTRAINT "PK_Items" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Price" TEXT NOT NULL,
+    "Description" TEXT NULL,
+    "ImageUrl" TEXT NULL
+);
+2025-10-08 14:11:48.300 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "OrderId" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "OrderDate" TEXT NOT NULL,
+    "CustomerId" INTEGER NOT NULL,
+    "TotalPrice" TEXT NOT NULL,
+    CONSTRAINT "FK_Orders_Customers_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customers" ("CustomerId") ON DELETE CASCADE
+);
+2025-10-08 14:11:48.321 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "OrderItems" (
+    "OrderItemId" INTEGER NOT NULL CONSTRAINT "PK_OrderItems" PRIMARY KEY AUTOINCREMENT,
+    "ItemId" INTEGER NOT NULL,
+    "Quantity" INTEGER NOT NULL,
+    "OrderId" INTEGER NOT NULL,
+    "OrderItemPrice" TEXT NOT NULL,
+    CONSTRAINT "FK_OrderItems_Items_ItemId" FOREIGN KEY ("ItemId") REFERENCES "Items" ("ItemId") ON DELETE CASCADE,
+    CONSTRAINT "FK_OrderItems_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("OrderId") ON DELETE CASCADE
+);
+2025-10-08 14:11:48.325 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_OrderItems_ItemId" ON "OrderItems" ("ItemId");
+2025-10-08 14:11:48.326 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_OrderItems_OrderId" ON "OrderItems" ("OrderId");
+2025-10-08 14:11:48.327 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");
+2025-10-08 14:11:48.419 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Items" AS "i")
+2025-10-08 14:11:48.486 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 96), @p1='?' (Size = 17), @p2='?' (Size = 5), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.492 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 108), @p1='?' (Size = 22), @p2='?' (Size = 17), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.493 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 103), @p1='?' (Size = 23), @p2='?' (Size = 12), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.494 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 84), @p1='?' (Size = 16), @p2='?' (Size = 12), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.495 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 126), @p1='?' (Size = 17), @p2='?' (Size = 5), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.496 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 97), @p1='?' (Size = 24), @p2='?' (Size = 14), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.496 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 92), @p1='?' (Size = 17), @p2='?' (Size = 5), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.497 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 71), @p1='?' (Size = 16), @p2='?' (Size = 4), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Items" ("Description", "ImageUrl", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "ItemId";
+2025-10-08 14:11:48.503 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Customers" AS "c")
+2025-10-08 14:11:48.510 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 11), @p1='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Address", "Name")
+VALUES (@p0, @p1)
+RETURNING "CustomerId";
+2025-10-08 14:11:48.511 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 14), @p1='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Address", "Name")
+VALUES (@p0, @p1)
+RETURNING "CustomerId";
+2025-10-08 14:11:48.514 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Orders" AS "o")
+2025-10-08 14:11:48.531 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 19), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("CustomerId", "OrderDate", "TotalPrice")
+VALUES (@p0, @p1, @p2)
+RETURNING "OrderId";
+2025-10-08 14:11:48.532 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 19), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("CustomerId", "OrderDate", "TotalPrice")
+VALUES (@p0, @p1, @p2)
+RETURNING "OrderId";
+2025-10-08 14:11:48.535 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "OrderItems" AS "o")
+2025-10-08 14:11:48.545 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OrderItems" ("ItemId", "OrderId", "OrderItemPrice", "Quantity")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "OrderItemId";
+2025-10-08 14:11:48.547 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OrderItems" ("ItemId", "OrderId", "OrderItemPrice", "Quantity")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "OrderItemId";
+2025-10-08 14:11:48.548 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OrderItems" ("ItemId", "OrderId", "OrderItemPrice", "Quantity")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "OrderItemId";
+2025-10-08 14:11:48.654 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."OrderId", "o"."CustomerId", "o"."OrderDate", "o"."TotalPrice", "o0"."OrderItemId", "o0"."ItemId", "o0"."OrderId", "o0"."OrderItemPrice", "o0"."Quantity"
+FROM "Orders" AS "o"
+LEFT JOIN "OrderItems" AS "o0" ON "o"."OrderId" = "o0"."OrderId"
+ORDER BY "o"."OrderId"
+2025-10-08 14:11:48.660 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Orders" SET "TotalPrice" = @p0
+WHERE "OrderId" = @p1
+RETURNING 1;
+2025-10-08 14:11:48.661 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Orders" SET "TotalPrice" = @p0
+WHERE "OrderId" = @p1
+RETURNING 1;
+2025-10-08 14:11:48.743 +02:00 [INF] User profile is available. Using '/Users/jaraazad/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-10-08 14:11:48.980 +02:00 [INF] Now listening on: https://localhost:7046
+2025-10-08 14:11:48.981 +02:00 [INF] Now listening on: http://localhost:5063
+2025-10-08 14:11:48.985 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-08 14:11:48.986 +02:00 [INF] Hosting environment: Development
+2025-10-08 14:11:48.986 +02:00 [INF] Content root path: /Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop
+2025-10-08 14:11:49.263 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5063/ - null null
+2025-10-08 14:11:49.279 +02:00 [INF] Executing endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2025-10-08 14:11:49.288 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyShop.Controllers.HomeController (MyShop).
+2025-10-08 14:11:49.293 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-08 14:11:49.342 +02:00 [INF] Executed ViewResult - view Index executed in 49.6894ms.
+2025-10-08 14:11:49.344 +02:00 [INF] Executed action MyShop.Controllers.HomeController.Index (MyShop) in 55.0435ms
+2025-10-08 14:11:49.344 +02:00 [INF] Executed endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2025-10-08 14:11:49.346 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5063/ - 200 null text/html; charset=utf-8 83.2427ms

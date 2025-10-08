@@ -1,0 +1,14 @@
+2025-10-08 14:15:30.655 +02:00 [INF] User profile is available. Using '/Users/jaraazad/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-10-08 14:15:30.891 +02:00 [INF] Now listening on: https://localhost:7046
+2025-10-08 14:15:30.892 +02:00 [INF] Now listening on: http://localhost:5063
+2025-10-08 14:15:30.896 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-08 14:15:30.897 +02:00 [INF] Hosting environment: Development
+2025-10-08 14:15:30.897 +02:00 [INF] Content root path: /Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop
+2025-10-08 14:15:31.168 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5063/ - null null
+2025-10-08 14:15:31.185 +02:00 [INF] Executing endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2025-10-08 14:15:31.192 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyShop.Controllers.HomeController (MyShop).
+2025-10-08 14:15:31.198 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-08 14:15:31.236 +02:00 [INF] Executed ViewResult - view Index executed in 37.8304ms.
+2025-10-08 14:15:31.239 +02:00 [INF] Executed action MyShop.Controllers.HomeController.Index (MyShop) in 46.9644ms
+2025-10-08 14:15:31.239 +02:00 [INF] Executed endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2025-10-08 14:15:31.244 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5063/ - 200 null text/html; charset=utf-8 77.0934ms

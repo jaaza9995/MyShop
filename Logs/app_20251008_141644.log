@@ -1,0 +1,25 @@
+2025-10-08 14:16:45.709 +02:00 [INF] User profile is available. Using '/Users/jaraazad/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-10-08 14:16:45.955 +02:00 [INF] Now listening on: https://localhost:7046
+2025-10-08 14:16:45.956 +02:00 [INF] Now listening on: http://localhost:5063
+2025-10-08 14:16:45.960 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-08 14:16:45.961 +02:00 [INF] Hosting environment: Development
+2025-10-08 14:16:45.962 +02:00 [INF] Content root path: /Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop
+2025-10-08 14:16:46.170 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5063/ - null null
+2025-10-08 14:16:46.182 +02:00 [INF] Executing endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2025-10-08 14:16:46.188 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyShop.Controllers.HomeController (MyShop).
+2025-10-08 14:16:46.193 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-08 14:16:46.227 +02:00 [INF] Executed ViewResult - view Index executed in 32.6249ms.
+2025-10-08 14:16:46.232 +02:00 [INF] Executed action MyShop.Controllers.HomeController.Index (MyShop) in 43.4225ms
+2025-10-08 14:16:46.233 +02:00 [INF] Executed endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2025-10-08 14:16:46.247 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5063/ - 200 null text/html; charset=utf-8 68.9063ms
+2025-10-08 14:16:48.814 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5063/Item/Table - null null
+2025-10-08 14:16:48.818 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemController.Table (MyShop)'
+2025-10-08 14:16:48.824 +02:00 [INF] Route matched with {action = "Table", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller MyShop.Controllers.ItemController (MyShop).
+2025-10-08 14:16:48.834 +02:00 [INF] This is an information message.
+2025-10-08 14:16:48.836 +02:00 [WRN] This is a warning message
+2025-10-08 14:16:48.837 +02:00 [ERR] This is an error message
+2025-10-08 14:16:48.889 +02:00 [INF] Executing ViewResult, running view Table.
+2025-10-08 14:16:48.897 +02:00 [INF] Executed ViewResult - view Table executed in 8.1594ms.
+2025-10-08 14:16:48.897 +02:00 [INF] Executed action MyShop.Controllers.ItemController.Table (MyShop) in 73.2624ms
+2025-10-08 14:16:48.897 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemController.Table (MyShop)'
+2025-10-08 14:16:48.899 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5063/Item/Table - 200 null text/html; charset=utf-8 85.2507ms

@@ -136,3 +136,8 @@
 /Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/Castle.Core.dll
 /Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Proxies.dll
 /Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/obj/Debug/net8.0/MyShop.sourcelink.json
+/Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/Serilog.dll
+/Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/jaraazad/Desktop/Webapplikasjoner_ITPE3200/Test/MyShop/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
