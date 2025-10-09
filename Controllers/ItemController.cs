@@ -21,7 +21,6 @@ public class ItemController : Controller
         var items = await _itemRepository.GetAll();
         if (items == null)
         {
-            _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
             return NotFound("Item list not found");
         }
         var itemsViewModel = new ItemsViewModel(items, "Table");
@@ -45,7 +44,6 @@ public class ItemController : Controller
         var item = await _itemRepository.GetItemById(id);
         if (item == null)
         {
-            _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
             return NotFound("Item not found for the ItemId");
         }
         return View(item);
@@ -66,7 +64,6 @@ public class ItemController : Controller
             if (returnOk)
                 return RedirectToAction(nameof(Table));
         }
-        _logger.LogWarning("[ItemController] Item creation failed {@item}", item);
         return View(item);
     }
 
@@ -76,7 +73,6 @@ public class ItemController : Controller
         var item = await _itemRepository.GetItemById(id);
         if (item == null)
         {
-            _logger.LogError("[ItemController] Item not found when updating the ItemId {ItemId:0000}", id);
             return BadRequest("Item not found for the ItemId");
         }
         return View(item);
@@ -91,7 +87,6 @@ public class ItemController : Controller
             if (returnOk)
                 return RedirectToAction(nameof(Table));
         }
-        _logger.LogWarning("[ItemController] Item update failed {@item}", item);
         return View(item);
     }
 
@@ -101,7 +96,6 @@ public class ItemController : Controller
         var item = await _itemRepository.GetItemById(id);
         if (item == null)
         {
-            _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
             return BadRequest("Item not found for the ItemId");
         }
         return View(item);
@@ -113,7 +107,6 @@ public class ItemController : Controller
         bool returnOk = await _itemRepository.Delete(id);
         if (!returnOk)
         {
-            _logger.LogError("[ItemController] Item deletion failed for the ItemId {ItemId:0000}", id);
             return BadRequest("Item deletion failed");
         }
         return RedirectToAction(nameof(Table));
